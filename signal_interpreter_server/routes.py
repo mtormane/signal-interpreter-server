@@ -1,5 +1,8 @@
 # routes.py
 from flask import Flask, request
+from signal_interpreter_server.json_parser import JsonParser
+
+json_parser = JsonParser()
 
 signal_interpreter_app = Flask(__name__)
 
