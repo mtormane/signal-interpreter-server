@@ -1,5 +1,5 @@
-from unittest.mock import patch,mock_open
 from signal_interpreter_server.json_parser import JsonParser
+import json, os, pytest
 
 jp = JsonParser()
 jp.data={"services": [{"title": "ECU Reset", "id": "11"}]}
@@ -7,6 +7,14 @@ jp.data={"services": [{"title": "ECU Reset", "id": "11"}]}
 def test_get_signal_title():
     assert jp.get_signal_title(11) == "ECU Reset"
 
-def test_load_file():
-    jp.load_file("C:\data\python\course\my_project\signal-interpreter-server\signal_database.json")
+@pytest.fixture(scope="session")
+def test_load_file(tmpdir):
+    tmp_db = {"services": [{"title": "ECU Reset", "id": "11"}]}
+    filepath = os.path.join(tmpdir,"tmp_json.json")
+
+    with open(filepath, 'w') as jfile:
+        json.dump(tmp_db, jfile)
+
+    jp.load_file(filepath)
     assert isinstance(jp.data, dict)
+    assert jp.data == tmp_db
