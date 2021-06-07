@@ -11,13 +11,10 @@ def parse_arguments():
 def main():
 
     #Server startup
-    #args = parse_arguments()
-    #json_parser.load_file(args.file_path)
+    args = parse_arguments()
+    json_parser.load_file(args.file_path)
     signal_interpreter_app.run()
 
 if __name__ == "__main__":
-    #main()
-    jp = JsonParser()
-    #jp.load_file(file_path='C:\data\python\course\my_project\signal-interpreter-server\signal_database.json')
-
+    main()
 
