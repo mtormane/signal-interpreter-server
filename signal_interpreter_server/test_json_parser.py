@@ -12,6 +12,8 @@ def test_load_file(tmpdir):
     tmp_db = {"services": [{"title": "ECU Reset", "id": "11"}]}
     filepath = os.path.join(tmpdir,"tmp_json.json")
 
+    # vi kan mocka bort open, se lösningsförslag. Går även med dekorator.
+    # Vi tittar närmare på fixture i lektion 4
     with open(filepath, 'w') as jfile:
         json.dump(tmp_db, jfile)
 
