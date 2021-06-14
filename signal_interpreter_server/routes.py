@@ -6,6 +6,7 @@ json_parser = JsonParser()
 
 signal_interpreter_app = Flask(__name__)
 
+
 @signal_interpreter_app.route("/", methods=["POST"])
 def interpret_signal():
     data = request.get_json()

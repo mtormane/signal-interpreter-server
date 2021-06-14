@@ -8,6 +8,11 @@ flask = "*"
 
 [dev-packages]
 pytest = "*"
+pytest-cov = "*"
+coverage = "*"
+invoke = "*"
+pylint = "*"
+pycodestyle = "*"
 
 [requires]
 python_version = "3.9"
