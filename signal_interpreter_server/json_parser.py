@@ -9,13 +9,12 @@ class JsonParser:
         # open the json file
         # load the json file and save it to self.data
         with open(file_path, "r") as my_file:
-            fdata = my_file.read()
-        self.data = json.loads(fdata)
+            self.data = json.loads(my_file.read())
 
     def get_signal_title(self, identifier):
         # loop through all services in self.data
         # if the service ID is the identifier, return the title
         for keys in self.data["services"]:
             if str(identifier) == keys["id"]:
-                signal_title = keys["title"]
-        return signal_title
+                return keys["title"]
+        return None
