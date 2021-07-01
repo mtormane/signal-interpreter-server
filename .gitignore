@@ -127,3 +127,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+/signal_interpreter_server/tests/log_file.txt

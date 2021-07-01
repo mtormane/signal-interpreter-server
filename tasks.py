@@ -4,7 +4,8 @@ from invoke import task
 
 CURR_DIR = os.path.abspath(os.path.dirname(__file__))
 SRC_DIR = os.path.join(CURR_DIR, "signal_interpreter_server")
-UNIT_TEST_DIR = os.path.join(CURR_DIR, "signal_interpreter_server")
+UNIT_TEST_DIR = os.path.join(CURR_DIR, "signal_interpreter_server","tests","unit_tests")
+INTEGR_TEST_DIR = os.path.join(CURR_DIR, "signal_interpreter_server","tests", "integration")
 COV_PATH = os.path.join(CURR_DIR, ".coveragerc")
 LINT_PATH = os.path.join(CURR_DIR, ".pylintrc")
 
@@ -19,5 +20,11 @@ def lint(_):
 @task
 def unit_test(_):
     cmd = f"pytest {UNIT_TEST_DIR} --cov {SRC_DIR} --cov-config={COV_PATH}"
+    print(cmd)
+    call(cmd, shell=True)
+
+@task
+def integr_test(_):
+    cmd = f"pytest {INTEGR_TEST_DIR}"
     print(cmd)
     call(cmd, shell=True)

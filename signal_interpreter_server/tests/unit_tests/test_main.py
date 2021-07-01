@@ -1,4 +1,7 @@
 from unittest.mock import patch
+
+import pytest
+
 from signal_interpreter_server.routes import JsonParser
 from signal_interpreter_server.main import parse_arguments, ArgumentParser
 from signal_interpreter_server.main import main, signal_interpreter_app, init
@@ -24,6 +27,16 @@ def test_main(mock_parse_arguments, mock_load_file, mock_run):
     mock_parse_arguments.assert_called_once()
     mock_load_file.assert_called_with(MockArgs.file_path)
     mock_run.assert_called_once()
+
+
+@patch.object(signal_interpreter_app, "run")
+@patch.object(JsonParser, "load_file", side_effect=Exception('MockedError'))
+@patch("signal_interpreter_server.main.parse_arguments", return_value=MockArgs)
+def test_main_exception(mock_parse_arguments, mock_load_file, mock_run):
+    with pytest.raises(Exception) as excinfo:
+        main()
+        mock_load_file.assert_called_with(MockArgs.file_path)
+        assert excinfo.value.message == 'MockedError'
 
 
 @patch("signal_interpreter_server.main.main")
