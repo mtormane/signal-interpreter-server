@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "6cee0b07caaf49d315dc8b7b794b3d5db556986f0f00ef21788e8248abcbc242"
+            "sha256": "8191f4afa341a2a9b86bfc2671cdfff15e9cf765515246c804ef70c94ab3a750"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -138,6 +138,14 @@
             ],
             "markers": "python_version >= '3.6'",
             "version": "==2.0.1"
+        },
+        "xmltodict": {
+            "hashes": [
+                "sha256:50d8c638ed7ecb88d90561beedbf720c9b4e851a9fa6c47ebd64e99d166d8a21",
+                "sha256:8bbcb45cc982f48b2ca8fe7e7827c5d792f217ecf1792626f808bf41c3b86051"
+            ],
+            "index": "pypi",
+            "version": "==0.12.0"
         }
     },
     "develop": {
@@ -292,11 +300,11 @@
         },
         "packaging": {
             "hashes": [
-                "sha256:5b327ac1320dc863dca72f4514ecc086f31186744b84a230374cc1fd776feae5",
-                "sha256:67714da7f7bc052e064859c05c595155bd1ee9f69f76557e21f051443c20947a"
+                "sha256:7dc96269f53a4ccec5c0670940a4281106dd0bb343f47b7471f779df49c2fbe7",
+                "sha256:c86254f9220d55e31cc94d69bade760f0847da8000def4dfe1c6b872fd14ff14"
             ],
-            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
-            "version": "==20.9"
+            "markers": "python_version >= '3.6'",
+            "version": "==21.0"
         },
         "pluggy": {
             "hashes": [
@@ -324,11 +332,11 @@
         },
         "pylint": {
             "hashes": [
-                "sha256:647fa5882fd49d7f34d07d0a23702689d5cf10a81dcd74e79bd524603d40b371",
-                "sha256:d8f9e6ff7bc2e64a724b1b4409f0a30014891fc006ffbf68b590015e364322ec"
+                "sha256:23a1dc8b30459d78e9ff25942c61bb936108ccbe29dd9e71c01dc8274961709a",
+                "sha256:5d46330e6b8886c31b5e3aba5ff48c10f4aa5e76cbf9002c6544306221e63fbc"
             ],
             "index": "pypi",
-            "version": "==2.9.1"
+            "version": "==2.9.3"
         },
         "pyparsing": {
             "hashes": [
